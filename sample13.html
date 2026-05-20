@@ -9,6 +9,7 @@
         let num_1 = 10;
         let num_2 = 5;
 
+        document.write("<h3> 1. 산술 연산자 <h3>");
         document.write("첫번째 변수의 값은 : " + num_1 + "<br>");  
         document.write("두번째 변수의 값은 : " + num_2 + "<br>");  
         document.write("두번째 변수의 합은 : " + (num_1 + num_2) + "<br>");  
@@ -17,13 +18,34 @@
         document.write("두번째 변수의 나누기은 : " + (num_1 / num_2) + "<br>"); 
         document.write("두번째 변수의 나머지은 : " + (num_1 % num_2) + "<br>"); 
 
+        document.write("<h3> 2. 증감 연산자 <h3>");
         document.write("++num_1 의미는? 10 + 1 = 11을 의미한다. 값을 확인하면 : " + ++num_1 + "<br>");    
         document.write("++num_1 의미는? 11 + 1 = 12을 의미한다. 값을 확인하면 : " + ++num_1 + "<br>");  
         document.write("num_1 값은 확인하면 확인하면 12이다 : " + num_1 + "<br>");   
 
-        
+        document.write("<h3> 3. 복합대입 연산자 <h3>"); 
+        num_2 += 5; // num_2 = num_2 + 5
+        document.write("증감연산자의 의미는 기존변수에 값을 더하는 : " + num_2 + "<br>");  
+        num_2 -= 5; // num_2 = num_2 - 5
+        document.write("증감연산자의 의미는 기존변수에 빼는 : " + num_2 + "<br>");  
+        num_2 *= 5; // num_2 = num_2 * 5
+        document.write("증감연산자의 의미는 기존변수에 곱하는 : " + num_2 + "<br>");  
+        num_2 /= 5; // num_2 = num_2 / 5
+        document.write("증감연산자의 의미는 기존변수에 나누면 : " + num_2 + "<br>");     
+        num_2 %= 5; // num_2 = num_2 % 5
+        document.write("증감연산자의 의미는 기존변수에 나머지는 : " + num_2 + "<br>");   
 
+        document.write("<h3> 4. 비교 연산자 <h3>");
+        document.write("왼쪽이 더 큼 : " + (num_1 > num_2) + "<br>"); 
+        document.write("오른쪽이 더 큼 : " + (num_1 < num_2) + "<br>"); 
+        document.write("왼쪽이 더 크거나 같다 : " + (num_1 >= num_2) + "<br>"); 
+        document.write("오른쪽이 더 크거나 같다 : " + (num_1 <= num_2) + "<br>" ); 
+        document.write("두 값이 같다 : " + (num_1 == num_2) + "<br>"); 
+        document.write("두 값이 같지않다 : " + (num_1 != num_2) + "<br>"); 
 
+        document.write("<h3> 5. 논리 연산자 <h3>");
+        document.write("<h5>  : " + (num_1 > num_2  &&  num_1 < num_2) + "<h5>");    //로그인 
+        document.write("<h5>  : " + (num_1 > num_2  ||  num_1 < num_2) + "<h5>");    //중요한 정보가 아닐때
 
 
 
