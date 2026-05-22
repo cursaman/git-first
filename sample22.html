@@ -17,12 +17,13 @@
         // }
         //
        
+        // 지정된 단 출력한는 문제 
         // document.write("5단 <hr>");
         // for(let i=1; i<=10;i++){
         //     document.write("5 *" + i + "=" + (5*i) + "<hr>");
         // }
 
-
+        // 전체 구구단 출력하는 문제 
         // for(let dan=2; dan<=9; dan++){
         //  document.write(dan + "단 <hr>");
       
@@ -31,7 +32,7 @@
         //    }
         // }
 
-
+        // 입력을 받아 단을 출력하는 문제   
         // const dan = prompt("몇 단을 출력할까요?");
         // const change_dan = Number(dan);
 
@@ -44,12 +45,44 @@
         //    );
         // }
 
+        // 입력된 숫자가 홀수면 홀수단  짝수는 짝수단  
+        // 예) 2단 2*2=4 2*4=8 2*6=12 2*8=16 문제
 
-        let fruits = ["apple", "banana", "orange", "Pear", "Lemon", "Strawberry" ];
- 
-        for (let i = 0; i < fruits.length; i++) {
-            document.write(fruits[i] + "<br>");
-        }
+            const dan = prompt("단을 입력하세요");
+            const change_dan = Number(dan);
+
+            document.write("<h2>" + change_dan + "단</h2>");
+
+            // 입력값이 짝수인지 확인
+            if(change_dan % 2 == 0){
+
+                // 짝수만 출력
+                for(let i = 2; i <= 9; i += 2){
+
+                    document.write(
+                        change_dan + " × " + i + " = " + (change_dan * i) + "<br>"
+                    );
+
+                }
+
+            } else {
+
+                // 홀수만 출력
+                for(let i = 1; i <= 9; i += 2){
+
+                    document.write(
+                        change_dan + " × " + i + " = " + (change_dan * i) + "<br>"
+                    );
+
+                }
+
+            }
+
+        // 배열을 순서대로 출력하는 문제
+        //let fruits = ["apple", "banana", "orange", "Pear", "Lemon", "Strawberry" ];
+        //for (let i = 0; i < fruits.length; i++) {
+        //    document.write(fruits[i] + "<br>");
+        //}
 
         
     </script>
