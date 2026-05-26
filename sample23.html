@@ -6,12 +6,28 @@
     <title>Document</title>
     <script>
 
-        const num = 10;
+      // 배열(Array) : 여러값을 하나의 변수에 지정할때 사용  
+      // 대괄호를 이용하영 값을 지정함 
+      // 배열안에 지정된 값을 요소라고함
+      // 요소의 순서는 index라고 하며 0부터 시작  
+      // length는 길이 즉 요소의 개수를 의미함
 
-        document.write("변수의 값은 " + num + "<br>");
-        document.write(`변수의 값은 ${num} <br>`);
-        
-        document.write(`변수의 값은 ${num} <br>`);
+      const arr =["김", "이", "최", "박", "왕"]
+      //document.write(arr + "<br>"); 
+
+      //document.write(arr[0] + "<br>");  배열요소를 가지고 올때 대괄호 안에 가져올 요소의 index값으로 한다. 
+      document.write(arr[1] + arr[2] + "<br>"); 
+      //document.write(arr[2] + "<br>"); 
+      //document.write(arr[3] + "<br>"); 
+      //document.write(arr[4] + "<br>"); 
+      //document.write(arr[1] + arr[2] + "<br>"); 
+      
+      for (let i = 0; i < arr.length; i++) {
+        document.write(arr[i] + "<br>");
+      }
+
+      document.write("length 의 길이는? " + arr.length + "<br>"); 
+
            
 
     </script>
