@@ -1,29 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script>
-
-      // 배열(Array) : 여러값을 하나의 변수에 지정할때 사용  
-      // 대괄호를 이용하영 값을 지정함 
-      // 배열안에 지정된 값을 요소라고함
-      // 요소의 순서는 index라고 하며 0부터 시작  
-      // length는 길이 즉 요소의 개수를 의미함
-
-    let user = {
-    name : "Tom",
-    age : 20
-    }
-    
-    document.write(user.name + "<br>");
-    document.write(user.age + "<br>");
-           
-
-    </script>
+  <meta charset="UTF-8">
+  <title>DOM 예제</title>
 </head>
 <body>
-    
+
+  <h1 id="title">자바스크립트 DOM 예제</h1>
+
+  <p class="text">버튼을 누르면 글자가 변경됩니다.</p>
+
+  <button onclick="changeText()">글자 변경</button>
+  <button onclick="changeColor()">색상 변경</button>
+
+  <script>
+    function changeText() {
+      document.getElementById("title").innerHTML = "DOM으로 글자 변경!";
+      document.querySelector(".text").innerHTML = "자바스크립트로 HTML 내용을 바꿨습니다.";
+    }
+
+    function changeColor() {
+      document.getElementById("title").style.color = "blue";
+      document.querySelector(".text").style.color = "red";
+    }
+  </script>
+
 </body>
 </html>
