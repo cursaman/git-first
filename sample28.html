@@ -2,20 +2,46 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
-  <title>DOM 예제</title>
+  <title>매개함수</title>
 </head>
 <body>
 
   <script>
-    // 매개함수 : 함수 내부에서 특적값을 반환함
+    // 매개함수 : 
     // 
-    // 
+    // 함수를 학생수에 맞게 만들기 힘들다.
+    //function nameFn_1(){
+    //         document.write("이름 : 홍길동, 취미 : 영화"); 
+    //         } 
 
-    function greet(name) {
-    document.write("안녕하세요 :" + name);
-    }
+    //function nameFn_2(){
+    //         document.write("이름 : 홍길동, 취미 : 영화"); 
+    //         } 
+    //
+    //nameFn_1(); 
+    //nameFn_2(); 
     
-    greet("홍길동");
+    //선언함수
+    //function nameFn(name, hoppy){
+    //         document.write("이름 : " + name + "<br>", "취미 : " + hoppy + "<br>" ); 
+
+    //         } 
+
+    //nameFn("홍길동", "영화");
+    //nameFn("홍길동2", "골프");
+    //nameFn("홍길동3", "당구");
+
+
+    const anFn = (name, hoppy) => {
+        document.write("이름 : " + name + "<br>");
+        document.write("취미 : " + hoppy + "<br>");
+    }
+
+    anFn("홍길동", "영화");
+    anFn("홍길동2", "골프");
+    anFn("홍길동3", "당구");
+
+</script>
 
 
   </script>
