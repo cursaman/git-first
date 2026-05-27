@@ -6,23 +6,35 @@
 </head>
 <body>
 
-  <h1 id="title">자바스크립트 DOM 예제</h1>
-
-  <p class="text">버튼을 누르면 글자가 변경됩니다.</p>
-
-  <button onclick="changeText()">글자 변경</button>
-  <button onclick="changeColor()">색상 변경</button>
-
   <script>
-    function changeText() {
-      document.getElementById("title").innerHTML = "DOM으로 글자 변경!";
-      document.querySelector(".text").innerHTML = "자바스크립트로 HTML 내용을 바꿨습니다.";
-    }
+    // 객체(Object) : 배열과 비슷하게 여러 속성을 저장 할수 있지만 
+    // 객체는 조금더 상세한 값을 저장 할 수 있음
+    // {} 중괄호 사용 
+    // 속성 : 값으로 구분 
+    // 객체 안의 함수를 메서드라고 함
 
-    function changeColor() {
-      document.getElementById("title").style.color = "blue";
-      document.querySelector(".text").style.color = "red";
-    }
+    // 접근 연산자(점 표기법)  
+    // 객체 내부에 속성을 접근할때 사용
+
+    // this 
+    // 객체 내부에 객체명을 한번더 선택할때 사용
+
+    const obj = {
+       name : "홍길동" ,
+       age : 20,
+       week : "화",
+       day : 27
+    };
+    
+    document.write("이름 :" + obj.name  + "<br>"); 
+    document.write("나아  :" +obj.age  + "<br>"); 
+    document.write("요일 :" +obj.week  + "요일 <br>"); 
+    document.write("요일 :" +obj.day  + "일 <br>"); 
+
+    document.write((obj.age + obj.day)  + "<br>"); 
+
+
+
   </script>
 
 </body>
