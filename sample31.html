@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+<script>
+
+    const name = prompt("이름을 넣어주세요");
+    const lang = prompt("좋아하는 언어는?");
+    const hoppy = prompt("좋아하는 취미는?");
+
+    const userInfo = {
+        name : name,
+        lang : lang,
+        hoppy : hoppy
+    };
+
+    document.write("<h2>## 성향 분석 ##</h2>");
+    document.write("이름 : " + userInfo.name + "<br>");
+    document.write("좋아하는 언어 : " + userInfo.lang + "<br>");
+    document.write("좋아하는 취미 : " + userInfo.hoppy + "<br>");
+
+</script>
+
+</body>
+</html>

@@ -3,7 +3,7 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
-  <title>DOM 예제</title>
+  <title>문제</title>
 </head>
 <body>
 
@@ -30,25 +30,30 @@
 
     //document.write("이름은 :" + obj.name); 
     //document.write("나이는 :" + obj.name); 
+    //userInfo  변수명 user_info 변수명
 
-    const obj = {
+    const userInfo = {
+       id : 0, 
+       username : "cursaman",
        name : "홍길동",
        age : 20,
        email : "aaa@naver.com",
        img : "a.png",
        intro:function (){
-                document.write("##     유저 정보     ##" + "<br>");
-                document.write("이름 :" + this.name  + "<br>"); 
-                document.write("나이 :" + this.age  + "<br>"); 
-                document.write("이메일 :" + this.email  + "<br>"); 
-                document.write("이미지 :" + this.img  + "<br>"); 
+                document.write("<h2>" + "## 유저 정보 ##" + "<h2>" + "<br>");
+                document.write("아이디 : " + this.id  + "<br>"); 
+                document.write("유저이름 : " + this.username  + "<br>"); 
+                document.write("이름 : " + this.name  + "<br>"); 
+                document.write("나이 : " + this.age  + "<br>"); 
+                document.write("이메일 : " + this.email  + "<br>"); 
+                document.write("이미지 : " + this.img  + "<br>"); 
                 
             }
 
     };
 
 
-    obj.intro();
+    userInfo.intro();
 
     
 
