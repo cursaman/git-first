@@ -23,18 +23,18 @@
        name : "홍길동" ,
        age : 20,
        week : "화",
-       day : 27
-    };
+       day : 27,
+       intro:function (){
+                  document.write("이름 :" + obj.name  + "<br>"); 
+   //             document.write("이름 :" + this.name  + "<br>"); 
+            }
+      };
     
-    document.write("이름 :" + obj.name  + "<br>"); 
-    document.write("나아  :" +obj.age  + "<br>"); 
-    document.write("요일 :" +obj.week  + "요일 <br>"); 
-    document.write("요일 :" +obj.day  + "일 <br>"); 
+      obj.intro();
 
-    document.write((obj.age + obj.day)  + "<br>"); 
-
-
-
+      document.write("이름 :" + obj.name  + "<br>"); 
+      document.write("나이 :" + obj.age  + "<br>"); 
+ 
   </script>
 
 </body>
