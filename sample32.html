@@ -1,46 +1,50 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script>
+
+        // *문제
+        // const user = {
+        //     username: "js",
+        //     password: "123"
+        // }
+        // =>위 객체 사용
+        // =>prompt를 활용하여 유저에게 아이디, 패스워드 입력받기
+        // =>입력받은 내용과 객체에 저장된 내용 비교하여 
+        // 아이디가 틀리면 아이디가 틀렸습니다. 
+        // 패스워드가 틀리면 패스워드가 틀렸습니다.
+        // 아이디, 패스워드가 맞으면 
+        // 00님 로그인 되었습니다. 라고 출력
+        // 이때 00님은 로그인한 유저의 아이디명으로 
+
+        // 팁 : 부정적인 부분 먼저 정의해서 작업해라 
+
+        const user = {
+            username: "홍길동",
+            password: "1234"
+        }
+
+
+        const inputUsername = prompt("아이디를 입력해주세요");
+        const inputPassword = prompt("패스워드를 입력해주세요");
+
+        if(user.username !== inputUsername){
+            document.write("<h2>아이디가 틀렸습니다.</h2>");
+        }else if(user.password !== inputPassword){
+            document.write("<h2>비밀번호가 틀렸습니다.</h2>");
+        }else if(user.username === inputUsername && user.password === inputPassword){
+            document.write(`<h2>${user.username}님 로그인 되었습니다.</h2>`);
+        }else{
+            document.write("알수없는 에러가 발생했습니다 다시 로그인 해주세요");
+        }
+
+
+    </script>
 </head>
 <body>
-
-<script>
-
-    // 부정적인 부분부터 먼저 정의하고 작업해야한다. 
-
-    // 입력값
-    const username = prompt("이름을 넣어주세요");
-    const password = prompt("패스워드를 넣어주세요");
-
-    // 회원 정보 객체
-    const user = {
-        username : "홍길동",
-        password : "1234"
-    };
-
-    // 로그인 체크
-    if(username === user.username && password === user.password){
-
-        document.write("아이디와 패스워드가 맞습니다.<br>");
-        document.write(username + " 로그인 되었습니다.<br>");
-
-    } else if(username !== user.username){
-
-        document.write("이름이 다릅니다.<br>");
-
-    } else if(password !== user.password){
-
-        document.write("패스워드가 다릅니다.<br>");
-
-    } else {
-
-        document.write("로그인에 실패했습니다.<br>");
-
-    }
-
-</script>
-
+    
 </body>
 </html>

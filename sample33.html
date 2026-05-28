@@ -4,15 +4,113 @@
     <meta charset="UTF-8">
     <title>Document</title>
 </head>
+<style>
+    body{
+    font-family: Arial, sans-serif;
+    background:#7198e7;
+    padding:30px;
+    }
+
+    h1{
+        text-align:center;
+    }
+
+    .wrap{
+        display: flex;
+        flex-direction: row; 
+        align-items: center;   
+        justify-content: space-between;      
+        
+    }
+
+    .box1{
+        width: 100px;
+        height: 100px;
+        background-color: aquamarine;
+    }
+
+    .box2{
+        width: 100px;
+        height: 100px;
+        background-color: rgb(34, 30, 99);
+    }
+
+    .box3{
+        width: 100px;
+        height: 100px;
+        background-color: rgb(56, 48, 194);
+    }
+
+
+</style>
+
 <body>
+
+
+
 
 <script>
 
+const users = [
+  {
+    name: "홍길동",
+    age: 20,
+    hobby: "영화",
+    email: "hong@naver.com",
+    img: "https://i0.wp.com/picjumbo.com/wp-content/uploads/green-natural-background-with-wooden-surface-free-image.jpeg?w=2210&quality=70",
+    level: "일반회원"
+  },
+  {
+    name: "김철수",
+    age: 35,
+    hobby: "골프",
+    email: "kim@naver.com",
+    img: "https://i0.wp.com/picjumbo.com/wp-content/uploads/green-natural-background-with-wooden-surface-free-image.jpeg?w=2210&quality=70",
+    level: "우수회원"
+  },
+  {
+    name: "이영희",
+    age: 28,
+    hobby: "독서",
+    email: "lee@naver.com",
+    img: "https://i0.wp.com/picjumbo.com/wp-content/uploads/green-natural-background-with-wooden-surface-free-image.jpeg?w=2210&quality=70",
+    level: "관리자"
+  },
+  {
+    name: "홍길동",
+    age: 30,
+    hobby: "당구",
+    email: "hong@naver.com",
+    img: "https://i0.wp.com/picjumbo.com/wp-content/uploads/green-natural-background-with-wooden-surface-free-image.jpeg?w=2210&quality=70",
+    level: "일반"
+  },
+  {
+    name: "이래구",
+    age: 50,
+    hobby: "골프",
+    email: "leera@naver.com",
+    img: "https://i0.wp.com/picjumbo.com/wp-content/uploads/green-natural-background-with-wooden-surface-free-image.jpeg?w=2210&quality=70",
+    level: "일반"
+  },
+  {
+    name: "강아구",
+    age: 52,
+    hobby: "골프",
+    email: "@naver.com",
+    img: "https://i0.wp.com/picjumbo.com/wp-content/uploads/green-natural-background-with-wooden-surface-free-image.jpeg?w=2210&quality=70",
+    level: "일반"
+  }
+];
 
-    const name = 
 
-    document.write("좋아하는 언어 : " + userInfo.lang + "<br>");
-    document.write("좋아하는 취미 : " + userInfo.hoppy + "<br>");
+for(let i = 0; i < users.length; i++){
+    document.write("이름은 : " + users[i].name + "<br>");
+    document.write("나이는 : " + users[i].age + "<br>");
+    document.write("취미는 : " + users[i].hobby + "<br>");
+    document.write("이메일은 : " + users[i].email + "<br>");
+    document.write("<img src='" + users[i].img + "'> <br>");
+    document.write("등급은 " + users[i].level + "<br> <br>");
+}
 
 </script>
 

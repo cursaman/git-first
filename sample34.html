@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        font-family: Arial, sans-serif;
+        background:#7198e7;
+        padding:30px;
+    }
+
+    h1{
+        text-align:center;
+        color:white;
+    }
+
+    .wrap{
+        width: 500px;
+        background:white;
+        margin: 30px auto;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    }
+
+    .coverImg img{
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+    }
+
+    .avatar img{
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin: -50px 0 10px 30px;
+        border: 5px solid white;
+    }
+
+    .id,
+    .title,
+    .username,
+    .viewCount,
+    .created_at{
+        padding: 8px 30px;
+    }
+
+    .title{
+        font-size: 24px;
+        font-weight: bold;
+    }
+
+    .username{
+        font-weight: bold;
+    }
+
+    .detailUrl img{
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        margin-top: 15px;
+    }
+</style>
+
+<body>
+
+    <h1>유튜브 화면</h1>
+
+<script>
+
+const contents = [
+  {
+    id: 0,
+    coverImg: "https://i0.wp.com/picjumbo.com/wp-content/uploads/green-natural-background-with-wooden-surface-free-image.jpeg?w=2210&quality=70",
+    avatar: "https://i0.wp.com/picjumbo.com/wp-content/uploads/green-natural-background-with-wooden-surface-free-image.jpeg?w=2210&quality=70",
+    title: "스크린동영상",
+    username: "홍길동1",
+    viewCount: "100회",
+    created_at: "스크린 골프의 동영상의 내용을 설명한다. ",
+    detailUrl: "https://i0.wp.com/picjumbo.com/wp-content/uploads/green-natural-background-with-wooden-surface-free-image.jpeg?w=2210&quality=70"
+
+  },
+  {
+    id: 1,
+    coverImg: "https://i0.wp.com/picjumbo.com/wp-content/uploads/green-natural-background-with-wooden-surface-free-image.jpeg?w=2210&quality=70",
+    avatar: "https://i0.wp.com/picjumbo.com/wp-content/uploads/green-natural-background-with-wooden-surface-free-image.jpeg?w=2210&quality=70",
+    title: "스크린동영상",
+    username: "홍길동2",
+    viewCount: "100",
+    created_at: "스크린 골프의 동영상의 내용을 설명한다. ",
+    detailUrl: "https://i0.wp.com/picjumbo.com/wp-content/uploads/green-natural-background-with-wooden-surface-free-image.jpeg?w=2210&quality=70"
+  },
+  {
+    id: 2,
+    coverImg: "https://i0.wp.com/picjumbo.com/wp-content/uploads/green-natural-background-with-wooden-surface-free-image.jpeg?w=2210&quality=70",
+    avatar: "https://i0.wp.com/picjumbo.com/wp-content/uploads/green-natural-background-with-wooden-surface-free-image.jpeg?w=2210&quality=70",
+    title: "스크린동영상",
+    username: "홍길동3",
+    viewCount: "100",
+    created_at: "스크린 골프의 동영상의 내용을 설명한다. ",
+    detailUrl: "https://i0.wp.com/picjumbo.com/wp-content/uploads/green-natural-background-with-wooden-surface-free-image.jpeg?w=2210&quality=70"
+  },
+  {
+    id: 3,
+    coverImg: "https://i0.wp.com/picjumbo.com/wp-content/uploads/green-natural-background-with-wooden-surface-free-image.jpeg?w=2210&quality=70",
+    avatar: "https://i0.wp.com/picjumbo.com/wp-content/uploads/green-natural-background-with-wooden-surface-free-image.jpeg?w=2210&quality=70",
+    title: "스크린동영상",
+    username: "홍길동4",
+    viewCount: "100",
+    created_at: "스크린 골프의 동영상의 내용을 설명한다. ",
+    detailUrl: "https://i0.wp.com/picjumbo.com/wp-content/uploads/green-natural-background-with-wooden-surface-free-image.jpeg?w=2210&quality=70"
+  }
+];
+
+
+for(let i = 0; i < contents.length; i++){
+    document.write(`    
+    <div class="wrap">    
+        <div class="id">${contents[i].id}</div>
+        <div class="coverImg">
+            <img src="${contents[i].coverImg}" alt="coverImg">
+        </div>
+        <div class="avatar">
+            <img src="${contents[i].avatar}" alt="coverImg">
+        </div>
+        <div class="title">${contents[i].title}</div>
+        <div class="username">${contents[i].username}</div>
+        <div class="viewCount">${contents[i].viewCount}</div>
+        <div class="created_at">${contents[i].created_at}</div>
+        <div class="detailUrl">
+            <img src="${contents[i].detailUrl}" alt="coverImg">
+        </div>
+
+    </div>
+    
+    `);
+
+}
+
+//for(let i = 0; i < users.length; i++){
+//    document.write("<img src='" + users[i].coverImg + "'> <br>");
+//    document.write("<img src='" + users[i].avatar + "'> <br>");
+//    document.write("타이틀은 : " + users[i].title + "<br>");
+//    document.write("이름은 : " + users[i].username + "<br>");
+//    document.write("방문자수 : " + users[i].viewCount + "<br>");
+//    document.write("설명은 : " + users[i].created_at + "<br>");
+//    document.write("<img src='" + users[i].detailUrl + "'> <br>");
+//}
+
+</script>
+
+</body>
+</html>
