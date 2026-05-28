@@ -16,6 +16,7 @@
         flex-direction: row; 
         align-items: center;   
         justify-content: space-between;      
+        gap: 40px;
         
     }
 
@@ -36,15 +37,61 @@
         height: 100px;
         background-color: rgb(56, 48, 194);
     }
+    
+    .box4{
+        width: 100px;
+        height: 100px;
+        background-color: rgb(56, 48, 194);
+    }
+
+    .box5{
+        width: 100px;
+        height: 100px;
+        background-color: rgb(56, 48, 194);
+    }
+
 </style>
 <body>
+
     <h1>홈</h1>
+
+<script>
+const contents = [
+  {
+    id_1: 1,
+    id_2: 2,
+    id_3: 3,
+    id_4: 4,
+    id_5: 5
+  },
+  {
+    id_1: 11,
+    id_2: 22,
+    id_3: 33,
+    id_4: 44,
+    id_5: 55
+  }
+];
+
+
+for(let i = 0; i < contents.length; i++){
+    document.write(`    
+
     <div class="wrap">    
-        <div class="box1"></div>
-        <div class="box2"></div>
-        <div class="box3"></div>
-        <div class="box3"></div>
+        <div class="box1">${contents[i].id_1}</div>
+        <div class="box2">${contents[i].id_2}</div>
+        <div class="box3">${contents[i].id_3}</div>
+        <div class="box4">${contents[i].id_4}</div>
+        <div class="box5">${contents[i].id_5}</div>
     </div>
+    
+    `);
+
+}
+
+
+</script>
+
 
 </body>
 </html>
