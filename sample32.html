@@ -8,11 +8,37 @@
 
 <script>
 
+    // 부정적인 부분부터 먼저 정의하고 작업해야한다. 
 
-    const name = prompt("이름을 넣어주세요");
+    // 입력값
+    const username = prompt("이름을 넣어주세요");
+    const password = prompt("패스워드를 넣어주세요");
 
-    document.write("좋아하는 언어 : " + userInfo.lang + "<br>");
-    document.write("좋아하는 취미 : " + userInfo.hoppy + "<br>");
+    // 회원 정보 객체
+    const user = {
+        username : "홍길동",
+        password : "1234"
+    };
+
+    // 로그인 체크
+    if(username === user.username && password === user.password){
+
+        document.write("아이디와 패스워드가 맞습니다.<br>");
+        document.write(username + " 로그인 되었습니다.<br>");
+
+    } else if(username !== user.username){
+
+        document.write("이름이 다릅니다.<br>");
+
+    } else if(password !== user.password){
+
+        document.write("패스워드가 다릅니다.<br>");
+
+    } else {
+
+        document.write("로그인에 실패했습니다.<br>");
+
+    }
 
 </script>
 
