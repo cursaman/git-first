@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        body{
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            height:100vh;
+            background:#111827;
+            }
+
+       .box{
+            width: 200px;
+            height: 200px;
+            background-color: rgb(43, 59, 59);
+            box-sizing: border-box;
+            box-shadow: white;
+            
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: large;
+            color: rgb(119, 212, 212);
+            text-align: center;
+
+       }
+    </style>
+</head>
+
+<body>
+
+<div class="box"></div>
+<div class="box">2</div>
+<div class="box">3</div>
+
+<script>
+
+
+    const boxEl = document.querySelector(".box");
+
+    boxEl.innerHTML = "<h1>wow!!</h1>" ;
+    // 내용 및 태그를 추가 할수 있음 
+
+
+</script>
+
+</body>
+</html>
