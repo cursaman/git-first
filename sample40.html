@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이벤트 위임 예제</title>
+
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+
+        .con_wrap{
+            max-width:500px;
+            width:100%;
+            display:flex;
+            justify-content:space-between;
+            margin:100px auto;
+            padding:0 20px;
+        }
+
+        .con{
+            width:120px;
+            height:120px;
+            background-color:gray;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            font-size:50px;
+            border-radius:50%;
+            cursor:pointer;
+        }
+
+        @keyframes motion{
+
+            0%{
+                transform:scale(1);
+            }
+
+            50%{
+                transform:scale(0.5);
+            }
+
+            75%{
+                transform:scale(1.2);
+            }
+
+            100%{
+                border-top-right-radius:0;
+                transform:scale(1);
+                background-color:gold;
+            }
+
+        }
+
+        .active{
+            animation:motion 0.5s forwards;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="con_wrap">
+        <div class="con">1</div>
+        <div class="con">2</div>
+        <div class="con">3</div>
+    </div>
+
+<script>
+
+    const conWrap = document.querySelector('.con_wrap');
+
+    const clickHandler = (e) => {
+
+        console.log("클릭한 요소 :", e.target);
+        //만약에 클릭한 요소가 .con이라면 클래스가 포함돼어 있다면 클릭한 요소에 토클로 active 클래스 추가해라 => 글을 적어봐라
+        //소스가 효율적으로 작성해야 한다.  
+        if(e.target.classList.contains('con')){
+            e.target.classList.toggle('active');
+        }
+
+    }
+
+    conWrap.addEventListener('click', clickHandler);
+
+</script>
+
+</body>
+</html>

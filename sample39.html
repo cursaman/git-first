@@ -1,45 +1,69 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>이벤트 좌표 확인</title>
+
     <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
 
         body{
+            padding:30px;
+        }
+
+        .parent{
+            width:300px;
+            height:300px;
+            background-color:aqua;
+
             display:flex;
             justify-content:center;
             align-items:center;
-            height:100vh;
-            background:#a1aeca;
-            }
 
+            cursor:pointer;
+        }
+
+        .child{
+            width:100px;
+            height:100px;
+            background-color:red;
+        }
+
+        h3{
+            margin-top:20px;
+        }
     </style>
 </head>
 
 <body>
 
+    <div class="parent">
+        <div class="child"></div>
+    </div>
+
+    <h3>박스를 클릭해보세요.</h3>
+
 <script>
 
-  //const conEl = document.createElement("div");  //createElement : 새로운 태그를 생성함
-  //const conAll = document.querySelectorAll(conEl); // 오류남
-  //const bodyEl = document.querySelector('body');
+const parentEl = document.querySelector(".parent");
+const hEl = document.querySelector("h3");
 
-  for(let i = 0; i<10; i++){
-    const conEl = document.createElement("div");
-    conEl.innerText = `$[i+1] 번째`;
-    //console 확인
-    document.body.appendChild(conEl);
-  }
- 
- // const conAll = document.querySelectorAll(".con");
+const clickHandler = (e) => {
 
- // conAll[0].innerText = "1번째";
- // conAll[1].innerText = "1번째";
- // conAll[2].innerText = "1번째";
+    console.log(e);
+    console.log("클릭한 요소 :", e.target);
+    console.log("클릭한 부모요소 :", e.target.parentNode);
+    console.log("이벤트 등록 요소 :", e.currentTarget);
 
+    hEl.innerText = `브라우저 기준 X : ${e.clientX}, Y : ${e.clientY} | 박스 기준 X : ${e.offsetX}, Y : ${e.offsetY}`;
+};
 
-</script>
+parentEl.addEventListener("click", clickHandler);
 
 </script>
 
