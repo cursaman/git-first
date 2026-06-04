@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>setTimeout 예제</title>
+</head>
+<body>
+
+    <h1>setTimeout 예제</h1>
+
+    <script>
+    
+        //  setInterval(function () {
+        //  console.log("1초마다 실행");
+        //  }, 1000);
+
+        //  setTimeout(function () {
+        //  console.log("3초 후 실행");
+        //  }, 3000);
+
+        //  const timer = setInterval(function () {
+        //  console.log("반복 실행");
+        //  }, 1000);
+        //
+        //  clearInterval(timer);
+
+        const timer = setTimeout(function () {
+        console.log("실행 예정");
+        }, 3000);
+        
+        clearTimeout(timer);
+
+    </script>
+
+</body>
+</html>
