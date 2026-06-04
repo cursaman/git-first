@@ -1,113 +1,113 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-<meta charset="UTF-8">
-<title>좋아요 카드 6개</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
 
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-<style>
+        .wrap{
+            max-width: 450px;
+            width: 100%;
+            margin: 100px auto;
+        }
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
+        .con{
+            margin-bottom: 50px;
+            border: 1px solid #dbdbdb;
+            border-radius: 10px;
+        }
 
-body{
-    background:#f5f5f5;
-}
+        .bg{
+            height: 400px;
+            background-color: lightgray;
+        }
 
-.wrap{
-    max-width:900px;
-    width:100%;
-    margin:100px auto;
+        .bottom_wrap{
+            padding: 20px 10px;
+        }
 
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:space-between;
-    gap:30px;
-}
+        .heart{
+            color: gray;
+            font-size: 20px;
+            cursor: pointer;
+        }
 
-.card{
-    width:30%;
-    text-align:center;
-}
+        .red_heart{
+            color: red;
+        }
 
-.box{
-    width:100%;
-    height:200px;
-    background:#ddd;
-    border-radius:20px;
-}
-
-.like_btn{
-    margin-top:20px;
-    font-size:40px;
-    color:#bbb;
-    cursor:pointer;
-    transition:0.3s;
-}
-
-.like_btn.active{
-    color:red;
-    transform:scale(1.2);
-}
-
-</style>
+    </style>
 </head>
 <body>
 
-<div class="wrap">
+    <div class="wrap">
 
-    <div class="card">
-        <div class="box"></div>
-        <i class="fa-solid fa-heart like_btn"></i>
+        <div class="con">
+
+            <div class="bg"></div>
+            <div class="bottom_wrap">
+                <div class="heart">
+                    <i class="fa-regular fa-heart"></i>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="con">
+
+            <div class="bg"></div>
+            <div class="bottom_wrap">
+                <div class="heart">
+                    <i class="fa-regular fa-heart"></i>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="con">
+
+            <div class="bg"></div>
+            <div class="bottom_wrap">
+                <div class="heart">
+                    <i class="fa-regular fa-heart"></i>
+                </div>
+            </div>
+
+        </div>
+
     </div>
 
-    <div class="card">
-        <div class="box"></div>
-        <i class="fa-solid fa-heart like_btn"></i>
-    </div>
+    <script>
 
-    <div class="card">
-        <div class="box"></div>
-        <i class="fa-solid fa-heart like_btn"></i>
-    </div>
+        // 눌렀을때 색이 바뀜
+        // 하트를 눌렀을때 색이 빨간색으로 변경됨 
+        // 색이 빨간색이라면 선으로 변경됨
 
-    <div class="card">
-        <div class="box"></div>
-        <i class="fa-solid fa-heart like_btn"></i>
-    </div>
+        const wrapEl = document.querySelector('.wrap');
 
-    <div class="card">
-        <div class="box"></div>
-        <i class="fa-solid fa-heart like_btn"></i>
-    </div>
+        const likeHeadler = (e) => {
+            // console.log(e.target);
+            // 클릭한 엘리먼트가 선 하트라면 클릭한 엘리먼트가 빨간 하트로 변경
+            const heartEl = e.target;
 
-    <div class="card">
-        <div class="box"></div>
-        <i class="fa-solid fa-heart like_btn"></i>
-    </div>
+            if(heartEl.classList.contains('fa-regular')){
+                heartEl.parentNode.innerHTML = '<i class="fa-solid fa-heart red_heart"></i>';
+            }else if(heartEl.classList.contains('fa-solid')){
+                heartEl.parentNode.innerHTML = '<i class="fa-regular fa-heart"></i>';
+            }
+        }
 
-</div>
+        wrapEl.addEventListener('click', likeHeadler);
 
-<script>
-
-const likeBtns = document.querySelectorAll('.like_btn');
-
-likeBtns.forEach(function(btn){
-
-    btn.addEventListener('click', function(){
-
-        btn.classList.toggle('active');
-
-    });
-
-});
-
-</script>
-
+    </script>
+    
 </body>
 </html>
