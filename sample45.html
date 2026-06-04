@@ -1,34 +1,48 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>타임 예제</title>
+    <title>Document</title>
+    <style>
+
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .box{
+            width: 300px;
+            height: 300px;
+            background: #000;
+        }
+
+    </style>
 </head>
 <body>
+    
+    <div class="box"></div>
 
-    <h1>타임 예제</h1>
+    <div class="dot"></div>
 
     <script>
-    
-        const now = new Date();
-        document.write(now);
-        document.write("<br>");
 
-        const date1 = new Date();
-        document.write(date1.getFullYear() + "년");
-        document.write("<br>");
+        // *이벤트
+        // =>선택자.addEventListener('이벤트명', 함수);
 
-        const date2 = new Date();
-        document.write(date2.getMonth() + 1 + "월");
-        document.write("<br>");
+        const boxEl = document.querySelector('.box');
+        
 
-        const date3 = new Date();
-        document.write(date3.getDate()+"일");
-        document.write("<br>");
+        // boxEl.addEventListener('click', () => {
+        //     console.log('클릭함');
+        // });
 
-        const date4 = new Date();
-        document.write(date4.getHours()+"시 "+date4.getMinutes()+"분 "+date4.getSeconds()+"초 ");
+        const boxClick = () => {
+            console.log('클릭함');
+        };
+
+        boxEl.addEventListener('click', boxClick);
 
 
     </script>
