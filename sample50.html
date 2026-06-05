@@ -3,21 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>타임 예제</title>
+    <title>현재 시간</title>
+
+    <style>
+        body{
+            text-align:center;
+            margin-top:100px;
+            font-family:Arial, sans-serif;
+        }
+
+        #clock{
+            font-size:40px;
+            font-weight:bold;
+        }
+    </style>
 </head>
 <body>
 
-    <h1>타임 예제</h1>
+    <h1>현재 시간</h1>
+
+    <div class="clock">00:00:00</div>
 
     <script>
-    
-        const now = new Date();
-        document.write(now);
-        document.write("<br>");
 
+         const clock = document.querySelector(".clock");
+
+         setInterval(function(){
+
+            // padStart 현재 문자의 시작 부분에 다른 문자로 채워 주어진 길이를 만족하는 새로윤 문자열로 반환함
+            const date = new Date();
+
+            const hour = String(date.getHours()).padStart(2,"0");
+            const min = String(date.getMinutes()).padStart(2,"0");
+            const sec = String(date.getSeconds()).padStart(2,"0");
+
+            clock.innerHTML = hour + "시 " + min +"분 "+ sec + "초 ";
+
+         }, 1000);
 
 
     </script>
 
 </body>
 </html>
+
+
