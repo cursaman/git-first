@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        body{
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            height:100vh;
+            background:#a1aeca;
+            }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="con"></div>
+    <div class="con"></div>
+    <div class="con"></div>
+    <div class="con"></div>
+    <div class="con"></div>
+    <div class="con"></div>
+    <div class="con"></div>
+    <div class="con"></div>
+    <div class="con"></div>
+    <div class="con"></div>
+
+<script>
+
+    //createElement : 새로운 태그를 생성함
+
+    //새로만들어진 p태그안에 내용을 넣고싶다.
+
+    //const pEl = document.createElement('p'); 
+    //const bodyEl = document.querySelector('body');
+
+    //console.log(bodyEl);  생성되는 부분을 확인이 필요하다.
+    //console.log(pEl);
+
+    // 1. 첫번째 방법 - 우선순서?
+    // bodyEl.appendChild(pEl);
+    //body에 새로만들어진 pEl를 넣고싶다.
+    // pEl.innerText = "새로 만들어진 p태그";    
+
+    // 2. 두번째 방법 - 우선순서? 
+    //pEl.innerText = "새로 만들어진 p태그";   
+
+    //bodyEl.appendChild(pEl);
+    //body에 새로만들어진 pEl를 넣고싶다.
+    //appendChild 선택자의 자식으로 추가  
+
+    //con 클래스 태그 10개 제작
+    //제작된 엘리먼트에 1번째 ~ 10번째 내용 추가 
+    //body 에 출력
+
+    
+  const conAll = document.querySelectorAll(".con");
+
+
+ // conAll[0].innerText = "1번째";
+ // conAll[1].innerText = "1번째";
+ // conAll[2].innerText = "1번째";
+
+
+
+
+</script>
+
+
+
+   
+
+</script>
+
+</body>
+</html>
