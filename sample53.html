@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>우산형 프로펠러</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    height:300vh;
+    background:#f5f5f5;
+}
+
+.title{
+    position:fixed;
+    top:30px;
+    left:50%;
+    transform:translateX(-50%);
+    font-size:30px;
+    font-weight:bold;
+}
+
+.fan{
+    width:300px;
+    height:300px;
+    position:fixed;
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%) rotate(0deg);
+}
+
+/* 날개 공통 */
+.blade{
+    width:90px;
+    height:140px;
+    background:#4b49d6;
+    border-radius:100px 100px 25px 25px;
+
+    position:absolute;
+    top:50%;
+    left:50%;
+
+    transform-origin:50% 100%;
+}
+
+/* 위쪽 날개 */
+.blade1{
+    transform:translate(-50%, -100%) rotate(0deg);
+}
+
+/* 오른쪽 아래 날개 */
+.blade2{
+    transform:translate(-50%, -100%) rotate(120deg);
+}
+
+/* 왼쪽 아래 날개 */
+.blade3{
+    transform:translate(-50%, -100%) rotate(240deg);
+}
+
+/* 중심축 */
+.center{
+    width:45px;
+    height:45px;
+    background:#222;
+    border-radius:50%;
+
+    position:absolute;
+    top:50%;
+    left:50%;
+
+    transform:translate(-50%, -50%);
+}
+
+</style>
+</head>
+
+<body>
+
+<h1 class="title">우산형 프로펠러</h1>
+
+<div class="fan">
+    <div class="blade blade1"></div>
+    <div class="blade blade2"></div>
+    <div class="blade blade3"></div>
+
+    <div class="center"></div>
+</div>
+
+<script>
+
+const fanEl = document.querySelector(".fan");
+
+window.addEventListener("scroll", function(){
+
+    const scrollY = window.scrollY;
+
+    fanEl.style.transform =
+    `translate(-50%, -50%) rotate(${scrollY * 50}deg)`;
+
+});
+
+</script>
+
+</body>
+</html>
