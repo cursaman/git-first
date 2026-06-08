@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>스크롤 회전 이벤트</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    height:300vh;
+}
+
+.box{
+    width:200px;
+    height:200px;
+    background:rgb(68, 28, 143);
+    position:fixed;
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%) rotate(0deg);
+}
+</style>
+</head>
+
+<body>
+
+<div class="box"></div>
+
+<script>
+
+const boxEl = document.querySelector(".box");
+
+window.addEventListener("scroll", function(){
+
+    const scrollY = window.scrollY;
+
+    boxEl.style.transform = `translate(-50%, -50%) rotate(${scrollY}deg)`;
+
+});
+
+</script>
+
+</body>
+</html>

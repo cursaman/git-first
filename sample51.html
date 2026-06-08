@@ -1,19 +1,186 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>예제</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>스크롤 이벤트</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+header{
+    width:100%;
+    height:80px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:40px;
+    background:white;
+    transition:0.5s;
+}
+
+.header_active{
+    position:fixed;
+    top:0;
+    left:0;
+    z-index:100;
+    background:rgba(0,0,0,0.8);
+    color:white;
+}
+
+section{
+    height:100vh;
+    border:2px solid red;
+}
+
+.section_1{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:20px;
+    font-size:80px;
+    background:lightgray;
+}
+
+.section_2{
+    padding:150px 100px;
+}
+
+.title_2{
+    font-size:80px;
+    margin-bottom:50px;
+}
+
+.con_wrap{
+    display:flex;
+    justify-content:space-between;
+}
+
+.con{
+    width:32%;
+    height:400px;
+    background:lightgray;
+
+    opacity:0;
+    transform:translateY(100px);
+    transition:0.8s;
+}
+
+.con.active{
+    opacity:1;
+    transform:translateY(0);
+}
+
+.section_3{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:80px;
+    background:#ddd;
+}
+
+.section_3 h3{
+    opacity:0;
+    transform:translateY(100px);
+    transition:1s;
+}
+
+.section_3 h3.active{
+    opacity:1;
+    transform:translateY(0);
+}
+
+</style>
 </head>
+
 <body>
 
-    <h1> 예제</h1>
+<div class="wrap">
 
-    <script>
+    <header>
+        <h3>Header</h3>
+    </header>
+
+    <section class="section_1">
+        <h3>Title</h3>
+        <h3>Section One</h3>
+    </section>
+
+    <section class="section_2">
+
+        <h3 class="title_2">Title2</h3>
+
+        <div class="con_wrap">
+            <div class="con con_1"></div>
+            <div class="con con_2"></div>
+            <div class="con con_3"></div>
+        </div>
+
+    </section>
+
+    <section class="section_3">
+        <h3>Section Three</h3>
+    </section>
+
+</div>
+
+<script>
+
+const headerEl = document.querySelector("header");
+
+const con1 = document.querySelector(".con_1");
+const con2 = document.querySelector(".con_2");
+const con3 = document.querySelector(".con_3");
+
+const section2 = document.querySelector(".section_2");
+
+const section3Title = document.querySelector(".section_3 h3");
+const section3 = document.querySelector(".section_3");
+
+const scrollHandler = () => {
+
+    const pageY = pageYOffset;
+    const winHeight = window.innerHeight;
     
+    console.log(pageY);
 
+    // 헤더 고정
+    if(pageY >= 300){
+        headerEl.classList.add("header_active");
+    }else{
+        headerEl.classList.remove("header_active");
+    }
 
-    </script>
+    // section2 카드 등장
+    if(pageY + winHeight > section2.offsetTop + 100){
+
+        con1.classList.add("active");
+
+        setTimeout(() => {
+            con2.classList.add("active");
+        },300);
+
+        setTimeout(() => {
+            con3.classList.add("active");
+        },600);
+
+    }
+
+    // section3 제목 등장
+    if(pageY + winHeight > section3.offsetTop + 100){
+        section3Title.classList.add("active");
+    }
+
+};
+
+window.addEventListener("scroll", scrollHandler);
+
+</script>
 
 </body>
 </html>
