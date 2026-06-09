@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Instagram Card</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"/>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+ul,li{
+    list-style:none;
+}
+
+.wrap{
+    max-width:450px;
+    width:100%;
+    margin:100px auto;
+    padding:30px;
+}
+
+.con{
+    background-color:#eee;
+    border-radius:10px;
+    border:1px solid #f1f1f1;
+    overflow:hidden;
+    position:relative;
+}
+
+header{
+    padding:15px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.more_btn{
+    cursor:pointer;
+}
+
+.user_wrap{
+    display:flex;
+    align-items:center;
+}
+
+.profile_img{
+    width:40px;
+    height:40px;
+    background-color:gray;
+    border-radius:50%;
+    margin-right:15px;
+}
+
+.username::after{
+    content:"user_name";
+    font-weight:bold;
+}
+
+.bg{
+    width:100%;
+    height:400px;
+}
+
+.con_img:nth-child(1){
+    background:url("https://picsum.photos/id/1015/600/600") no-repeat center / cover;
+}
+
+.con_img:nth-child(2){
+    background:url("https://picsum.photos/id/1025/600/600") no-repeat center / cover;
+}
+
+.con_img:nth-child(3){
+    background:url("https://picsum.photos/id/1035/600/600") no-repeat center / cover;
+}
+
+.bottom_wrap{
+    padding:15px;
+}
+
+.heart{
+    font-size:24px;
+    color:#555;
+    cursor:pointer;
+}
+
+.heart.active{
+    color:red;
+}
+
+.like{
+    margin-top:10px;
+}
+
+.modal_wrap{
+    width:100%;
+    height:100%;
+    display:none;
+    justify-content:center;
+    align-items:center;
+    position:absolute;
+    top:0;
+    left:0;
+    background-color:rgba(0,0,0,0.5);
+    backdrop-filter:blur(5px);
+    z-index:10;
+}
+
+.show_active{
+    display:flex;
+}
+
+.list_wrap{
+    max-width:350px;
+    width:100%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-direction:column;
+    color:white;
+}
+
+.list_wrap li{
+    text-align:center;
+    padding:20px 0;
+    font-size:18px;
+    cursor:pointer;
+    font-weight:500;
+}
+
+.list_wrap li:last-child{
+    color:crimson;
+}
+</style>
+</head>
+
+<body>
+
+<div class="wrap">
+
+    <div class="con">
+
+        <header>
+            <div class="user_wrap">
+                <div class="profile_img"></div>
+                <div class="username"></div>
+            </div>
+
+            <div class="more_btn">
+                <i class="fa-solid fa-ellipsis"></i>
+            </div>
+        </header>
+
+        <div class="swiper bg">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide con_img"></div>
+                <div class="swiper-slide con_img"></div>
+                <div class="swiper-slide con_img"></div>
+            </div>
+
+            <div class="swiper-pagination pagination"></div>
+        </div>
+
+        <div class="bottom_wrap">
+            <div class="heart">
+                <i class="fa-regular fa-heart"></i>
+            </div>
+            <p class="like">좋아요 <span>0</span>개</p>
+        </div>
+
+        <div class="modal_wrap">
+            <ul class="list_wrap">
+                <li>팔로우</li>
+                <li>저장</li>
+                <li>게시물로 이동</li>
+                <li class="cancel">취소</li>
+            </ul>
+        </div>
+
+    </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+
+<script>
+const moreBtn = document.querySelector('.more_btn');
+const modalWrap = document.querySelector('.modal_wrap');
+const cancelBtn = document.querySelector('.cancel');
+
+const heart = document.querySelector('.heart');
+const heartIcon = document.querySelector('.heart i');
+const likeCount = document.querySelector('.like span');
+
+let count = 0;
+let isLike = false;
+
+// 1. 메뉴 클릭 시 모달창 띄우기
+moreBtn.addEventListener('click', function(){
+    modalWrap.classList.add('show_active');
+});
+
+// 취소 클릭 시 모달창 닫기
+cancelBtn.addEventListener('click', function(){
+    modalWrap.classList.remove('show_active');
+});
+
+// 2. Swiper 적용
+const swiper = new Swiper('.swiper', {
+    loop:true,
+
+    pagination:{
+        el:'.swiper-pagination',
+        clickable:true,
+    },
+});
+
+// 3, 4. 하트 클릭 시 빨간색 + 좋아요 증가
+heart.addEventListener('click', function(){
+
+    if(isLike === false){
+        heart.classList.add('active');
+        heartIcon.classList.remove('fa-regular');
+        heartIcon.classList.add('fa-solid');
+
+        count++;
+        likeCount.textContent = count;
+
+        isLike = true;
+    } else {
+        heart.classList.remove('active');
+        heartIcon.classList.remove('fa-solid');
+        heartIcon.classList.add('fa-regular');
+
+        count--;
+        likeCount.textContent = count;
+
+        isLike = false;
+    }
+
+});
+</script>
+
+</body>
+</html>
