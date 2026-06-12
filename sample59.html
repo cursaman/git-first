@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    
+
+    <script>
+        // 필터 : 배열.filter(매개변수)=> {값};
+        // 선택한 배열 안에 있는 값중 원하는 값을 필터링함
+
+        const products = [
+        { name: "노트북", price: 1200000 },
+        { name: "키보드", price: 80000 },
+        { name: "마우스", price: 35000 },
+        { name: "모니터", price: 300000 }
+        ];
+
+        const result = products.filter(product => product.price >= 1000);
+        
+        console.log(result);
+        
+    </script>
+    
+</body>
+</html>
