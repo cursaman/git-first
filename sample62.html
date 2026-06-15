@@ -1,12 +1,426 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>전체페이지 구성</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&family=Sanchez&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:"Noto Sans KR", sans-serif;
+    color:#222;
+}
+
+a{
+    text-decoration:none;
+    color:#222;
+}
+
+.wrap{
+    width:1200px;
+    margin:0 auto;
+}
+
+/* 헤더 */
+
+.header{
+    height:80px;
+    border-bottom:1px solid #ddd;
+}
+
+.header .wrap{
+    height:80px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    font-family:"Sanchez", serif;
+    font-size:28px;
+    font-weight:700;
+}
+
+.menu{
+    display:flex;
+    gap:50px;
+}
+
+.menu a{
+    font-weight:700;
+}
+
+/* 비주얼 */
+
+.visual{
+    height:420px;
+    margin-top:40px;
+    position:relative;
+    overflow:hidden;
+}
+
+.swiper-slide img{
+    width:100%;
+    height:420px;
+    object-fit:cover;
+    display:block;
+}
+
+.visual_text{
+    position:absolute;
+    left:60px;
+    top:100px;
+    z-index:10;
+    color:#fff;
+}
+
+.visual_text h2{
+    font-family:"Sanchez", serif;
+    font-size:42px;
+    margin-bottom:20px;
+}
+
+.visual_text p{
+    font-size:20px;
+    line-height:1.6;
+    margin-bottom:25px;
+}
+
+.btn{
+    display:inline-block;
+    padding:14px 30px;
+    background:#111;
+    color:#fff;
+    font-weight:700;
+}
+
+.swiper-button-next,
+.swiper-button-prev{
+    color:#fff;
+}
+
+.swiper-pagination-bullet{
+    background:#fff;
+}
+
+.section_title{
+    font-family:"Sanchez", serif;
+    margin:70px 0 30px;
+    font-size:30px;
+}
+
+/* 카드 */
+
+.card_wrap{
+    display:flex;
+    gap:30px;
+}
+
+.card{
+    width:380px;
+    border:1px solid #ddd;
+    background:#fff;
+    transition:.4s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 10px 30px rgba(0,0,0,.15);
+}
+
+.img_box{
+    height:260px;
+    overflow:hidden;
+    position:relative;
+}
+
+.img_box img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:.5s;
+}
+
+.overlay{
+    position:absolute;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,.5);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    opacity:0;
+    transition:.5s;
+}
+
+.overlay span{
+    color:#fff;
+    border:1px solid #fff;
+    padding:10px 20px;
+}
+
+.card:hover .overlay{
+    opacity:1;
+}
+
+.card:hover img{
+    transform:scale(1.1);
+}
+
+.card_text{
+    padding:25px;
+}
+
+.card_text h3{
+    margin-bottom:15px;
+}
+
+.tag_wrap{
+    display:flex;
+    gap:8px;
+    margin-top:15px;
+}
+
+.tag{
+    border:1px solid #333;
+    padding:6px 12px;
+    font-size:13px;
+}
+
+/* 정보 */
+
+.info_wrap{
+    display:flex;
+    gap:40px;
+    margin-top:70px;
+}
+
+.info_box{
+    width:580px;
+    padding:40px;
+}
+
+.info_left{
+    background:#eee;
+}
+
+.info_right{
+    background:#222;
+    color:#fff;
+}
+
+.info_box h3{
+    margin-bottom:20px;
+}
+
+/* 푸터 */
+
+.footer{
+    margin-top:70px;
+    height:100px;
+    background:#111;
+    color:#fff;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+</style>
 </head>
+
 <body>
-    
-    
+
+<header class="header">
+    <div class="wrap">
+        <div class="logo">LOGO</div>
+
+        <nav class="menu">
+            <a href="#">CLASS</a>
+            <a href="#">GALLERY</a>
+            <a href="#">TOOLS</a>
+            <a href="#">NEWS</a>
+        </nav>
+    </div>
+</header>
+
+<div class="wrap">
+
+    <div class="visual swiper">
+
+        <div class="swiper-wrapper">
+
+            <div class="swiper-slide">
+                <img src="https://goyos.kr/img/category_design.png" alt="">
+            </div>
+
+            <div class="swiper-slide">
+                <img src="https://goyos.kr/img/category_pub.png" alt="">
+            </div>
+
+            <div class="swiper-slide">
+                <img src="https://goyos.kr/img/category_dev.png" alt="">
+            </div>
+
+        </div>
+
+        <div class="swiper-pagination"></div>
+
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+
+        <div class="visual_text">
+            <h2>GUI DETAIL DESIGN</h2>
+
+            <p>
+                웹 화면의 구조를 이해하고<br>
+                디자인 요소를 정확하게 배치합니다.
+            </p>
+
+            <a href="#" class="btn">VIEW MORE</a>
+        </div>
+
+    </div>
+
+</div>
+
+<div class="wrap">
+
+    <h2 class="section_title">Skill Categories</h2>
+
+    <div class="card_wrap">
+
+        <div class="card">
+            <div class="img_box">
+                <img src="https://goyos.kr/img/category_design.png" alt="">
+                <div class="overlay">
+                    <span>VIEW MORE</span>
+                </div>
+            </div>
+
+            <div class="card_text">
+                <h3>DESIGN</h3>
+                <p>Figma, Photoshop, Illustrator를 활용한 화면 디자인 영역입니다.</p>
+
+                <div class="tag_wrap">
+                    <span class="tag">Figma</span>
+                    <span class="tag">Photoshop</span>
+                    <span class="tag">UI/UX</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="img_box">
+                <img src="https://goyos.kr/img/category_pub.png" alt="">
+                <div class="overlay">
+                    <span>VIEW MORE</span>
+                </div>
+            </div>
+
+            <div class="card_text">
+                <h3>PUBLISHING</h3>
+                <p>HTML과 CSS를 사용하여 웹 페이지 구조와 스타일을 구현합니다.</p>
+
+                <div class="tag_wrap">
+                    <span class="tag">HTML</span>
+                    <span class="tag">CSS</span>
+                    <span class="tag">Hover</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="img_box">
+                <img src="https://goyos.kr/img/category_dev.png" alt="">
+                <div class="overlay">
+                    <span>VIEW MORE</span>
+                </div>
+            </div>
+
+            <div class="card_text">
+                <h3>DEVELOPMENT</h3>
+                <p>웹 서비스 구현을 위한 기본 개발 구조를 이해합니다.</p>
+
+                <div class="tag_wrap">
+                    <span class="tag">React</span>
+                    <span class="tag">Git</span>
+                    <span class="tag">Code</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<div class="wrap">
+
+    <div class="info_wrap">
+
+        <div class="info_box info_left">
+            <h3>About Class</h3>
+            <p>
+                GUI 상세디자인은 화면 구성, 여백, 정렬,
+                이미지 처리, 버튼 디자인 등을 종합적으로 다루는 과정입니다.
+            </p>
+        </div>
+
+        <div class="info_box info_right">
+            <h3>Design Point</h3>
+            <p>
+                전체 구조를 먼저 잡고 그 다음 세부 스타일을 적용해야
+                안정적인 웹 페이지를 만들 수 있습니다.
+            </p>
+        </div>
+
+    </div>
+
+</div>
+
+<footer class="footer">
+    COPYRIGHT 2026. CURSAMAN. ALL RIGHTS RESERVED.
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+
+<script>
+
+const swiper = new Swiper('.visual', {
+
+    loop:true,
+
+    autoplay:{
+        delay:3000,
+        disableOnInteraction:false,
+    },
+
+    pagination:{
+        el:'.swiper-pagination',
+        clickable:true,
+    },
+
+    navigation:{
+        nextEl:'.swiper-button-next',
+        prevEl:'.swiper-button-prev',
+    }
+
+});
+
+</script>
+
 </body>
 </html>
