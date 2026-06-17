@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1200">
+<title>Section Layout</title>
+
+<!-- 웹폰트 -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&family=Sanchez:ital@0;1&display=swap" rel="stylesheet">
+
+<!-- 아이콘: Font Awesome Free -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+
+<!-- Swiper CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css">
+
+<!-- CSS -->
+<link rel="stylesheet" href="css/style2.css">
+</head>
+
+<body>
+
+<header class="header">
+    <div class="header_inner">
+        <h1 class="logo">
+            <a href="#">LOGO</a>
+        </h1>
+
+        <button class="menu_btn" type="button">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+    </div>
+</header>
+
+<nav class="side_menu">
+    <button class="close_btn" type="button">
+        <i class="fa-solid fa-xmark"></i>
+    </button>
+
+    <ul>
+        <li><a href="#">HOME</a></li>
+        <li><a href="#">ABOUT</a></li>
+        <li><a href="#">GALLERY</a></li>
+        <li><a href="#">CONTACT</a></li>
+    </ul>
+</nav>
+
+<main>
+
+    <section class="section1">
+        <div class="main_slide swiper">
+            <div class="swiper-wrapper slide_wrap"></div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </section>
+
+    <section class="section2">
+        <div class="text_box">
+            <h2>Section Title 2</h2>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.<br>
+                Soluta itaque enim quo esse voluptas corrupti.Lorem ipsum<br>
+                dolor sit amet consectetur adipisicing elit.
+            </p>
+
+            <button class="view_btn" type="button">View More →</button>
+        </div>
+
+        <div class="card_wrap"></div>
+    </section>
+
+</main>
+
+<div class="modal">
+    <div class="modal_box">
+        <button class="modal_close" type="button">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <h2>Modal Title</h2>
+        <p>
+            View More 버튼을 클릭하면 나타나는 모달창입니다.
+            닫기 버튼을 누르면 모달창이 닫힙니다.
+        </p>
+
+        <button class="modal_close close_btn2" type="button">닫기</button>
+    </div>
+</div>
+
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+
+<!-- JS -->
+<script src="js/script2.js"></script>
+
+</body>
+</html>
