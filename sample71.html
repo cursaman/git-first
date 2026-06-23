@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>다크모드</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    padding:50px;
+    background:#ffffff;
+    color:#222;
+    transition:0.3s;
+}
+
+body.dark{
+    background:#222;
+    color:#fff;
+}
+
+button{
+    padding:10px 20px;
+    margin-bottom:20px;
+    cursor:pointer;
+}
+
+.card{
+    padding:20px;
+    border:1px solid #ddd;
+    border-radius:10px;
+}
+
+body.dark .card{
+    border-color:#555;
+}
+</style>
+</head>
+<body>
+
+<button class="mode_btn">다크모드</button>
+
+<div class="card">
+    <h2>제목입니다</h2>
+    <p>다크모드 테스트용 내용입니다.</p>
+</div>
+
+<script>
+const modeBtn = document.querySelector(".mode_btn");
+
+modeBtn.addEventListener("click", function(){
+
+    document.body.classList.toggle("dark");
+
+    if(document.body.classList.contains("dark")){
+        modeBtn.textContent = "라이트모드";
+    }else{
+        modeBtn.textContent = "다크모드";
+    }
+
+});
+</script>
+
+</body>
+</html>
