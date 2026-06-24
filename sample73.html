@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>날씨 앱</title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+            font-family: sans-serif;
+        }
+
+        .wrap{
+            width: 300px;
+            padding: 30px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .location,
+        .weather,
+        .temp{
+            margin-top: 15px;
+        }
+
+        .temp span{
+            font-size: 32px;
+            font-weight: bold;
+            color: royalblue;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="wrap">
+        <h2>현재 날씨</h2>
+
+        <div class="location">
+            지역 :
+        </div>
+
+        <div class="weather">
+            날씨 :
+        </div>
+
+        <div class="temp">
+            온도 :
+            <span>0</span>℃
+        </div>
+    </div>
+
+    <script>
+
+        const tempEl = document.querySelector(".temp span");
+        const locationEl = document.querySelector(".location");
+        const weatherEl = document.querySelector(".weather");
+
+        const weather = (pos) => {
+
+            const lat = pos.coords.latitude;
+            const lon = pos.coords.longitude;
+
+            const API_KEY = "a264ecbd82a07667a65c751bbcae0056";
+
+            fetch(
+                `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric&lang=kr`
+            )
+            .then(res => res.json())
+            .then(data => {
+
+                console.log(data);
+
+                const city = data.name;
+                const temp = Math.round(data.main.temp);
+                const weatherState = data.weather[0].description;
+
+                locationEl.textContent = `지역 : ${city}`;
+                weatherEl.textContent = `날씨 : ${weatherState}`;
+                tempEl.textContent = temp;
+
+            })
+            .catch(err => {
+                console.log("에러 발생", err);
+            });
+        };
+
+        navigator.geolocation.getCurrentPosition(
+            weather,
+            (err) => {
+                console.log("위치 정보 오류", err);
+            }
+        );
+
+    </script>
+
+</body>
+</html>
